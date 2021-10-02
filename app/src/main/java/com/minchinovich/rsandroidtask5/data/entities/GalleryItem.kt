@@ -3,15 +3,16 @@ package com.minchinovich.rsandroidtask5.data.entities
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.squareup.moshi.Json
 
 
 @Entity(tableName = GalleryItem.TABLE_NAME)
-data class GalleryItem(
-    @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    @ColumnInfo(name = ITEM_ID_PROPERTY) var itemId: String = "",
+data class GalleryItem @JvmOverloads constructor  (
+    @PrimaryKey(autoGenerate = true) val uuid: Long = 0,
+    @ColumnInfo(name = ITEM_ID_PROPERTY) var id: String = "",
     @ColumnInfo(name = HEIGHT_PROPERTY) var height: Int = 0,
     @ColumnInfo(name = WIGHT_PROPERTY) var width: Int = 0,
-    @ColumnInfo(name = URL_PROPERTY) var url: String = ""){
+    @ColumnInfo(name = URL_PROPERTY) var url: String = "") {
 
     companion object{
         const val TABLE_NAME = "gallery"

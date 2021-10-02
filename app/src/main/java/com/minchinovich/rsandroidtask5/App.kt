@@ -4,6 +4,7 @@ import android.app.Application
 import com.minchinovich.rsandroidtask5.data.db.AppRoomDatabase
 import com.minchinovich.rsandroidtask5.domain.GalleryRepository
 import com.minchinovich.rsandroidtask5.domain.datasources.GalleryDataSource
+import com.minchinovich.rsandroidtask5.domain.network.TheCatServise
 import com.minchinovich.rsandroidtask5.ui.ViewModelFactory
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
@@ -24,8 +25,9 @@ class App: Application() {
     val database by lazy {
         AppRoomDatabase.getDatabase(this)
     }
-    val dataSource by lazy { GalleryDataSource(database.galleryDao()) }
-    val galleryRepository by lazy { GalleryRepository(dataSource) }
+//    val dataSource by lazy { GalleryDataSource(database.galleryDao()) }
+    val theCatServise by lazy { TheCatServise.create() }
+    val galleryRepository by lazy { GalleryRepository(theCatServise) }
 
     val viewModelFactory by lazy {
         ViewModelFactory(
