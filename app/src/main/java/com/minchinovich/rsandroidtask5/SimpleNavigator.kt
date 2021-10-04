@@ -1,5 +1,7 @@
 package com.minchinovich.rsandroidtask5
 
-interface SimpleNavigator {
+import com.minchinovich.rsandroidtask5.data.entities.GalleryItem
 
+interface SimpleNavigator {
+    fun showPhoto(galleryItem: GalleryItem)
 }

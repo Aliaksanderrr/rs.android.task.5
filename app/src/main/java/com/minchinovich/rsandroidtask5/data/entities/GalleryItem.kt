@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
-
+import java.io.Serializable
 
 @Entity(tableName = GalleryItem.TABLE_NAME)
 data class GalleryItem @JvmOverloads constructor  (
@@ -12,7 +12,8 @@ data class GalleryItem @JvmOverloads constructor  (
     @ColumnInfo(name = ITEM_ID_PROPERTY) var id: String = "",
     @ColumnInfo(name = HEIGHT_PROPERTY) var height: Int = 0,
     @ColumnInfo(name = WIGHT_PROPERTY) var width: Int = 0,
-    @ColumnInfo(name = URL_PROPERTY) var url: String = "") {
+    @ColumnInfo(name = URL_PROPERTY) var url: String = ""
+) : Serializable{
 
     companion object{
         const val TABLE_NAME = "gallery"

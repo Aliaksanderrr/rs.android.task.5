@@ -2,8 +2,10 @@ package com.minchinovich.rsandroidtask5
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.minchinovich.rsandroidtask5.data.entities.GalleryItem
 import com.minchinovich.rsandroidtask5.databinding.ActivityMainBinding
 import com.minchinovich.rsandroidtask5.ui.main.PhotoGalleryFragment
+import com.minchinovich.rsandroidtask5.ui.photo.PhotoFragment
 
 class MainActivity : AppCompatActivity(), SimpleNavigator {
 
@@ -22,5 +24,11 @@ class MainActivity : AppCompatActivity(), SimpleNavigator {
         }
     }
 
-    //TODO here will be add override fun by SimpleNavigator
+    override fun showPhoto(galleryItem: GalleryItem) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragmentContainer, PhotoFragment.newInstance(galleryItem))
+            .addToBackStack(null)
+            .commit()
+    }
 }

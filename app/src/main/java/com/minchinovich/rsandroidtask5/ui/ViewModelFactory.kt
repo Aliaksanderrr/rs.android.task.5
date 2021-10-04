@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.minchinovich.rsandroidtask5.domain.GalleryRepository
 import com.minchinovich.rsandroidtask5.ui.main.PhotoGalleryViewModel
+import com.minchinovich.rsandroidtask5.ui.photo.PhotoViewModel
 import java.lang.IllegalArgumentException
 
 class ViewModelFactory(
@@ -13,6 +14,9 @@ class ViewModelFactory(
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if(modelClass.isAssignableFrom(PhotoGalleryViewModel::class.java)){
+            return PhotoGalleryViewModel(galleryRepository) as T
+        }
+        if(modelClass.isAssignableFrom(PhotoViewModel::class.java)){
             return PhotoGalleryViewModel(galleryRepository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class: ${modelClass::class.java}")

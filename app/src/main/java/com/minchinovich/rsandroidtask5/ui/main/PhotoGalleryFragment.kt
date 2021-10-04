@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.minchinovich.rsandroidtask5.R
 import com.minchinovich.rsandroidtask5.databinding.PhotoGalleryFragmentBinding
 import com.minchinovich.rsandroidtask5.domain.network.RepoSearchResult
+import com.minchinovich.rsandroidtask5.utils.navigator
 import com.minchinovich.rsandroidtask5.utils.requireApp
 import com.minchinovich.rsandroidtask5.utils.requireMainActivity
 
@@ -35,9 +36,6 @@ class PhotoGalleryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = PhotoGalleryFragmentBinding.inflate(inflater, container, false)
-
-
-
         // add dividers between RecyclerView's row items
         val decoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
         binding.photoRecyclerView.addItemDecoration(decoration)
@@ -63,7 +61,7 @@ class PhotoGalleryFragment : Fragment() {
     ) {
         val galleryAdapter = PhotoAdapter(
             onClick = { photo ->
-                //TODO Create on click to photo
+                navigator.showPhoto(photo)
                 Toast.makeText(context, "${photo.id} pressed", Toast.LENGTH_SHORT).show()
             }
         )

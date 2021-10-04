@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/programming/Java/rsandroidtask5/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/programming/Java/rsandroidtask5/app/src/main/res/layout/fragment_photo.xml" value="0.1" />
+        <entry key="..\:/programming/Java/rsandroidtask5/app/src/main/res/layout/photo_fragment.xml" value="0.25416666666666665" />
         <entry key="..\:/programming/Java/rsandroidtask5/app/src/main/res/layout/photo_gallery_fragment.xml" value="0.176" />
         <entry key="..\:/programming/Java/rsandroidtask5/app/src/main/res/layout/photo_gallery_photo_item.xml" value="0.1" />
       </map>

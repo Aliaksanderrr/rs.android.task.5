@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Сaturday</string>
     <string name="photo_gallery_fragment_title">Photo Gallery</string>
+    <string name="photo_fragment_save_button">save</string>
 </resources>
