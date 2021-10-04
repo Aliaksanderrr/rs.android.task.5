@@ -68,27 +68,6 @@ class GalleryRepository(private val service: TheCatServise) {
         return inMemoryCache
     }
 
-
-//    suspend fun addGallery(gallery: GalleryItem) = withContext(Dispatchers.IO){
-//        galleryDataSource.addGallery(gallery)
-//    }
-//
-//    suspend fun updateGallery(gallery: GalleryItem) = withContext(Dispatchers.IO){
-//        galleryDataSource.updateGallery(gallery)
-//    }
-//    suspend fun removeGallery(gallery: GalleryItem) = withContext(Dispatchers.IO){
-//        galleryDataSource.removeGallery(gallery)
-//    }
-//    fun observeGalleryList(): Flow<List<GalleryItem>> = galleryDataSource.observeGalleryList()
-//
-////TODO this code worked before db created;(
-////    private val catFetch = CatFetch()
-////
-//    fun getCats(){
-//        val cats = catFetch.getCats()
-//        Log.d("TAG", "CatRepository: ${cats.size}}")
-//    }
-
     companion object {
         const val NETWORK_PAGE_SIZE = 30
     }
